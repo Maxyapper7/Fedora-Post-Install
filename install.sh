@@ -8,10 +8,10 @@ echo Do you want Full Or None?
 read -p 'f, or n: ' packages
 
 cd ~
-echo fastestmirror=True >> .bashrc
-echo max_parallel_downloads=10 >> .bashrc
-echo defaultyes=True >> .bashrc
-echo keepcache=True >> .bashrc
+echo fastestmirror=True >> /etc/dnf/dnf.conf
+echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf
+echo defaultyes=True >> /etc/dnf/dnf.conf
+echo keepcache=True >> /etc/dnf/dnf.conf
 
 sudo dnf update -y
 if [ $frame == 'y' ]
