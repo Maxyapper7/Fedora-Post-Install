@@ -7,8 +7,13 @@ read -p 'y or n: ' nvidia
 echo Do you want Full Or None?
 read -p 'f, or n: ' packages
 
-sudo dnf update -y
+cd ~
+echo fastestmirror=True >> .bashrc
+echo max_parallel_downloads=10 >> .bashrc
+echo defaultyes=True >> .bashrc
+echo keepcache=True >> .bashrc
 
+sudo dnf update -y
 if [ $frame == 'y' ]
   then
   bash Framework.sh
