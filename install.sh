@@ -14,21 +14,20 @@ sudo echo defaultyes=True >> /etc/dnf/dnf.conf
 sudo echo keepcache=True >> /etc/dnf/dnf.conf
 
 sudo dnf update -y
+
 if [ $frame == 'y' ]
   then
   bash Framework.sh
 fi
+
 if [ $nvidia == 'y' ]
   then
   sudo bash Nvidia.sh
 fi
-if [ $packages == 'f ' ]
+
+if [ $packages == 'y' ]
   then
   sudo bash Full.sh
-fi
-if [ $packages == 'n ' ]
-  then
-  bash Minimal.sh
 fi
 
 echo Done with install, Would you like to restart
