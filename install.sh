@@ -7,7 +7,6 @@ read -p 'y or n: ' nvidia
 echo Do you want Full Or None?
 read -p 'f, or n: ' packages
 
-cd ~
 sudo echo fastestmirror=True >> /etc/dnf/dnf.conf
 sudo echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf
 sudo echo defaultyes=True >> /etc/dnf/dnf.conf
