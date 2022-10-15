@@ -5,6 +5,10 @@ sudo grubby --update-kernel=ALL --args="module_blacklist=hid_sensor_hub"
 sudo dnf install powertop -y
 sudo systemctl enable powertop
 sudo dnf groupupdate core -y
+
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -Y
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -Y
+sudo dnf groupinstall multimedia -Y
 sudo dnf install intel-media-driver intel-gpu-tools
 
 
