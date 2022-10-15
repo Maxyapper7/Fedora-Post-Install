@@ -8,10 +8,10 @@ echo Do you want Full Or None?
 read -p 'f, or n: ' packages
 
 cd ~
-echo fastestmirror=True >> /etc/dnf/dnf.conf
-echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf
-echo defaultyes=True >> /etc/dnf/dnf.conf
-echo keepcache=True >> /etc/dnf/dnf.conf
+sudo echo fastestmirror=True >> /etc/dnf/dnf.conf
+sudo echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf
+sudo echo defaultyes=True >> /etc/dnf/dnf.conf
+sudo echo keepcache=True >> /etc/dnf/dnf.conf
 
 sudo dnf update -y
 if [ $frame == 'y' ]
@@ -24,7 +24,7 @@ if [ $nvidia == 'y' ]
 fi
 if [ $packages == 'f ' ]
   then
-  bash Full.sh
+  sudo bash Full.sh
 fi
 if [ $packages == 'n ' ]
   then
