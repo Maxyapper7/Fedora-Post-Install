@@ -14,6 +14,9 @@ sudo echo keepcache=True >> /etc/dnf/dnf.conf
 
 sudo dnf update -y
 
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
 if [ $frame == 'y' ]
   then
   bash Framework.sh
@@ -24,7 +27,7 @@ if [ $nvidia == 'y' ]
   sudo bash Nvidia.sh
 fi
 
-if [ $packages == 'y' ]
+if [ $packages == 'f' ]
   then
   sudo bash Full.sh
 fi

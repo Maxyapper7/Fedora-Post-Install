@@ -7,9 +7,7 @@ sudo systemctl enable powertop
 sudo dnf groupupdate core -y
 
 #GPU
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf groupinstall multimedia -y
-sudo dnf install intel-media-driver intel-gpu-tools
+sudo dnf install intel-media-driver intel-gpu-tools -y
 
 
