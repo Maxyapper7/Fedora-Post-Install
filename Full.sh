@@ -6,7 +6,7 @@ dnf upgrade -y
 #Installes Packages
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak install flathub -y com.google.Chrome com.obsproject.Studio io.github.shiftey.Desktop net.davidotek.pupgui2 org.onlyoffice.desktopeditors us.zoom.Zoom org.videolan.VLC com.visualstudio.code org.polymc.PolyMC com.discordapp.Discord
+flatpak install flathub -y com.google.Chrome com.obsproject.Studio io.github.shiftey.Desktop net.davidotek.pupgui2 org.onlyoffice.desktopeditors us.zoom.Zoom org.videolan.VLC com.visualstudio.code org.prismlauncher.PrismLauncher
 
 dnf install steam lutris godot filezilla vim gnome-tweaks -y
 
@@ -19,29 +19,39 @@ dnf groupupdate sound-and-video -y
 
 mkdir ~/.wallpaper
 mv wallpaper.jpg ~/.wallpaper/1.jpg
+echo The wallpaper was make by ThioJoe.art
+### Wallpaper made by ThioJoe ###
 
 #Addes alias
-echo ### Aliases ### >> ~/.bashrc
-echo # DNF >> ~/.bashrc
-echo alias updt='sudo dnf update -y; sudo flatpak update -y' >> ~/.bashrc
-echo alias dnfin='sudo dnf install' >> ~/.bashrc
-echo alias dnfrm='sudo dnf remove' >> ~/.bashrc
-echo alias dnfup='sudo dnf update' >> ~/.bashrc
+
 echo  >> ~/.bashrc
-echo # cd >> ~/.bashrc
-echo alias .1='cd ..' >> ~/.bashrc
-echo alias .2='cd ../..' >> ~/.bashrc
-echo alias .3='cd ../../..' >> ~/.bashrc
-echo alias .4='cd ../../../..' >> ~/.bashrc
-echo alias .5='cd ../../../../..' >> ~/.bashrc
-echo  >> ~/.bashrc
-echo # Confirmations >> ~/.bashrc
-echo alias mv='mv -i' >> ~/.bashrc
-echo alias cp='cp -i' >> ~/.bashrc
-echo alias rm='rm -i' >> ~/.bashrc
-echo  >> ~/.bashrc
-echo # Random >> ~/.bashrc
-echo alias vi='vim' >> ~/.bashrc
-echo alias ls='ls -lah --color=auto' >> ~/.bashrc
-echo alias mkdir='mkdir -pv' >> ~/.bashrc
+echo 'if [ -f ~/.bash_aliases ]; then' >> ~/.bashrc
+echo     . ~/.bash_aliases >> ~/.bashrc
+echo fi >> ~/.bashrc
+
+cp .bash_aliases ~
+
+# ### Aliases ###
+# # DNF
+# alias updt='sudo dnf update -y; sudo flatpak update -y'
+# alias dnfin='sudo dnf install'
+# alias dnfrm='sudo dnf remove'
+# alias dnfup='sudo dnf update'
+# 
+# # cd
+# alias .1='cd ..'
+# alias .2='cd ../..'
+# alias .3='cd ../../..'
+# alias .4='cd ../../../..'
+# alias .5='cd ../../../../..'
+# 
+# # Confirmations
+# alias mv='mv -i'
+# alias cp='cp -i'
+# alias rm='rm -i'
+# 
+# # Random
+# alias vi='vim'
+# alias ls='ls -lah --color=auto'
+# alias mkdir='mkdir -pv'
 
