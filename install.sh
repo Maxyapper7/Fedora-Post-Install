@@ -1,9 +1,4 @@
 #!/bin/bash
-if [ `whoami` != root ]; then
-    echo Please run this script as sudo
-    exit
-fi
-
 echo Hello, This is a fedora install
 echo Are you on a framework?
 read -p 'y or n: ' frame
@@ -17,10 +12,10 @@ echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf
 echo defaultyes=True >> /etc/dnf/dnf.conf
 echo keepcache=True >> /etc/dnf/dnf.conf
 
-dnf update -y
+sudo dnf update -y
 
-dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
-dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
 if [ $frame == 'y' ]
   then
@@ -29,21 +24,21 @@ fi
 
 if [ $nvidia == 'y' ]
   then
-  bash Nvidia.sh
+  sudo bash Nvidia.sh
 fi
 
 if [ $packages == 'f' ]
   then
-  bash Full.sh
+  sudo bash Full.sh
 fi
 
-dnf upgrade -y
+sudo dnf upgrade -y
 
 echo Done with install, Would you like to restart
 read -p 'y or n: ' restart
 if [ $restart == 'y' ]
   then
-  sudo reboot
+  sudo restart
 fi
 if [ $restart == 'n' ]
   then
