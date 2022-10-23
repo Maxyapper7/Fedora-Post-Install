@@ -1,6 +1,7 @@
 ### Aliases ###
 # DNF
 alias updt='sudo dnf update -y; sudo flatpak update -y'
+alias dnfup='sudo dnf update'
 alias dnfin='sudo dnf install'
 alias dnfrm='sudo dnf remove'
 alias dnfup='sudo dnf update'
