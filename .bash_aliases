@@ -19,8 +19,8 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # Random
-alias vi='nvim'
-alias vim='nvim'
+alias vi='lvim'
+alias vim='lvim'
 alias ls='ls -lah --color=auto'
 alias mkdir='mkdir -pv'
 alias df='df -h'

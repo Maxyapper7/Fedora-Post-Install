@@ -10,6 +10,9 @@ flatpak install flathub -y com.google.Chrome com.obsproject.Studio io.github.shi
 
 dnf install steam lutris godot filezilla neovim gnome-tweaks btop -y
 
+#Installs Luner Vim
+LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+
 #Removes preinstall Gnome stuff
 dnf remove gnome-boxes gnome-calendar libreoffice-calc libreoffice-impress libreoffice-writer gnome-logs gnome-maps gnome-photos gnome-characters gnome-contacts gnome-weather gnome-tour gnome-clocks gnome-font-viewer -y
 
