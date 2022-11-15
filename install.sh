@@ -38,7 +38,7 @@ echo Done with install, Would you like to restart
 read -p 'y or n: ' restart
 if [ $restart == 'y' ]
   then
-  sudo restart
+  sudo reboot
 fi
 if [ $restart == 'n' ]
   then
